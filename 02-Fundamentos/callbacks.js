@@ -14,10 +14,29 @@ const getUsuario = (id, callback) => {
     },1500)
 }
 
-
 getUsuario(10, (usuario)=>{
     console.log(usuario.id)
     //Aqui no use toUppperCase
     // console.log(usuario.nombre.toUppperCase());
     console.log(usuario.nombre);
+});
+
+
+
+
+const getchica = (ids, callback2)=>{
+    const woman = {
+        ids,
+        nombre: 'Sofy'
+    }
+
+    setTimeout(()=>{
+        callback2(woman)
+    },1500)
+}
+
+// console.log(getchica(21))
+getchica(21, (woman)=>{
+    console.log(woman.ids);
+    console.log(woman.nombre.toUpperCase());
 });
