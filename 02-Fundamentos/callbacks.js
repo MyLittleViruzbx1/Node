@@ -3,7 +3,6 @@
 // },1000);
 
 
-
 const getUsuario = (id, callback) => {
     const usuario = {
         id,
@@ -22,8 +21,6 @@ getUsuario(10, (usuario)=>{
 });
 
 
-
-
 const getchica = (ids, callback2)=>{
     const woman = {
         ids,
@@ -40,3 +37,21 @@ getchica(21, (woman)=>{
     console.log(woman.ids);
     console.log(woman.nombre.toUpperCase());
 });
+
+
+const getHeroes = (idx, callback3)=>{
+
+    const heroe = {
+        idx,
+        nombre:'gambito',
+    }
+
+       setTimeout(() => {
+        callback3(heroe)
+       },1500);
+    }
+
+    getHeroes(6,(heroe)=>{
+        console.log(heroe.idx);
+        console.log(heroe.nombre);
+    });
