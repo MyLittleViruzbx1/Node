@@ -1,6 +1,8 @@
 
+const { crearArchivo } = require('./helpers/multiplicar');
+
 console.clear();
 
-for(numero = 1; numero <= 10; numero++){
-    console.log(`${5} x ${numero} = ${5*numero}`);
-}
+
+const base = 11;
+crearArchivo(base);
