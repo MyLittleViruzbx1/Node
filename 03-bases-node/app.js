@@ -1,22 +1,20 @@
-const willyfs = require('fs');
+const { crearArchivo } = require('./helpers/multiplicar');
 
 console.clear();
-console.log("================================");
-const numero = 4
-console.log(`Tabla del ${numero}`)
-console.log("================================");
-
-// tarea hacer la tabla del 5
-let salida = '';
-for(i=1; i<=10; i++){
-    // console.log(numero + " * " + i + ' = ' + numero*i)
-    salida +=`${numero} x ${i} = ${numero*i}\n`;
-}
-
-console.log(salida);
 
 
-willyfs.writeFile(`tabla-${numero}.txt`,salida,(err)=>{
-    if(err) throw err;
-    console.log(`tabla-${numero}.txt creado`);
-});
+const [,,arg3='base=5'] = process.argv;
+const [, base = 5] = arg3.split('=')
+// console.log(process.argv)
+console.log( base )
+// const base = 12;
+
+
+
+
+crearArchivo(base)
+    .then(nombreArchivo =>console.log(nombreArchivo, 'creado'))
+    .catch(err => console.log(err));
+
+
+
