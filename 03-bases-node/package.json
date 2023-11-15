@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MyLittleViruzbx1/Node#readme",
   "dependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "yargs": "^17.7.2"
   }
 }
