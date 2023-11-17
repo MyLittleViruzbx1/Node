@@ -1,22 +1,26 @@
-const fsmyz = require('fs');
 
+const {crearArchivo} = require('./helpers/multiplicar')
 
+const argv = require('yargs').argv;
 
 console.clear();
-console.log('============');
-console.log('Table del 1');
-console.log('============');
 
-base = 7;
 
-let salida = '';
+// base = 5;
 
-for(let i = 1; i <= 10 ;i++ ){
-    salida += `${base} x ${i} = ${i*base}\n`
-}
+// const [,,arg3= 'base=3'] = process.argv;
+// const [, base = 5] = arg3.split('=');
 
-console.log(salida)
-fsmyz.writeFile(`tabla-${base}.txt`, salida,  (err) =>{
-    if (err) throw err;
-})
-console.log(`Tabla-${base}.txt creado`)
+
+
+console.log(process.argv)
+console.log(argv)
+
+
+console.log('base: yargs', argv.base)
+
+// console.log(base);
+
+// crearArchivo(base)
+//     .then(nombreArchivo => console.log(nombreArchivo, 'creado') )
+//     .catch(err => console.log(err) );
