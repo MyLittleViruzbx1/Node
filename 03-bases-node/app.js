@@ -1,8 +1,8 @@
 
-const {crearArchivo} = require('./helpers/multiplicar')
-
-const argv = require('yargs').argv;
-
+// const { number, argv, option } = require('yargs');
+const {crearArchivo} = require('./helpers/multiplicar');
+const argv = require('./config/yargs');
+let colors = require('colors');
 console.clear();
 
 
@@ -13,14 +13,14 @@ console.clear();
 
 
 
-console.log(process.argv)
+// console.log(process.argv)
 console.log(argv)
 
 
-console.log('base: yargs', argv.base)
+// console.log('base: yargs', argv.base)
 
 // console.log(base);
 
-// crearArchivo(base)
-//     .then(nombreArchivo => console.log(nombreArchivo, 'creado') )
-//     .catch(err => console.log(err) );
+crearArchivo(argv.b, argv.l)
+    .then(nombreArchivo => console.log(nombreArchivo, 'creado'.green) )
+    .catch(err => console.log(err) );

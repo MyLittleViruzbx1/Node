@@ -1,34 +1,31 @@
+const { rainbow } = require('colors');
 const fsmyz = require('fs');
-
-
-
-
-const crearArchivo = (base = 5) =>{
+let colors = require('colors');
+const crearArchivo = (base = 5, listar = false) =>{
     
     return new Promise((resolve, reject) =>{
-        
 
         try {
-            
-            console.log('============');
-            console.log(`Tabla del ${base}`);
-            console.log('============');
             
             let salida = '';
             
             for(let i = 1; i <= 10 ;i++ ){
-                salida += `${base} x ${i} = ${i*base}\n`
+                salida += `${base } ${'x'.green} ${i} ${'='.green} ${i*base}\n`
             }
-            
-            console.log(salida)
-            fsmyz.writeFileSync(`tabla-${base}.txt`, salida);
+            if(listar){
+                console.log('============' .green);
+                console.log(`Tabla del ${base}`.rainbow);
+                console.log('============' .green);
+                console.log(salida)
+            }
+            fsmyz.writeFileSync(`tabla-${base}.txt`, salida .green);
+          
             resolve(`Tabla-${base}.txt creado`);
 
         } catch (error) {
             console.log(error)
         }
         
-       
     })
 }
 
