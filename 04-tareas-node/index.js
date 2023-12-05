@@ -7,6 +7,8 @@ console.clear();
 
 const main =async() =>{
 
+    let opt ='';
+    const tareas = new Tareas();
     do {
         
         opt = await inquirerMenu();
@@ -16,3 +18,5 @@ const main =async() =>{
 }
 
 main();
+
+
