@@ -7,7 +7,7 @@ const mostrarMenu = () =>{
         console.clear();
         
         console.log('=========================='.green);
-        console.log('   Seleccione una opcion  '.green)
+        console.log('   Seleccione una opcion  '.green);
         console.log('==========================\n'.green);
         
         console.log(`${'1.'.green} Crear una tarea`);
@@ -41,9 +41,8 @@ const pausa = () =>{
             output: process.stdout
         });
         
-        
         readline.question(`\nPresione ${'ENTER'.red} para continuar\n`, (opt) =>{
-            // console.log({opt})
+            console.log({opt})
             readline.close();
             resolve();
         })

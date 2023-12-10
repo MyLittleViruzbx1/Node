@@ -1,8 +1,10 @@
 require('colors');
+
 const { inquirerMenu, 
     pausa,
-    leerInput } = require('./helpers/inquirer');
-const Tarea = require('./models/tarea');
+    leerInput,
+ } = require('./helpers/inquirer');
+ 
 const Tareas = require('./models/tareas');
 
 console.clear();
@@ -19,12 +21,13 @@ const main =async() =>{
         switch(opt){
             case '1':
                 //crear opcion
-                const desc = await leerInput('descripcion:');
-                // console.log(desc)
-                tareas.crearTarea(desc);
+                const desc = await leerInput('Descripción:');
+                tareas.crearTarea( desc );
+                console.log(desc)
                 break;
             case '2':
-                console.log(tareas._listado)
+                // console.log(tareas._listado)
+                console.log(tareas.listadoArr)
                 break;
         }
 
@@ -33,5 +36,3 @@ const main =async() =>{
 }
 
 main();
-
-

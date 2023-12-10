@@ -8,7 +8,7 @@ class Tarea{
     completadoEn = null;
 
     constructor(desc) {
-        this.desc = uudiv4;
+        this.desc = uudiv4();
         this.desc = desc;
         this.completadoEn = null;
     }
