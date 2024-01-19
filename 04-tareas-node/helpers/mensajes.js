@@ -1,10 +1,12 @@
-require('color');
+const { read } = require('fs');
+
+require('colors');
 
 const mostrarMenu = () =>{
     console.clear();
     console.log('========================'.green);
     console.log('Selecccione una opcion'.green);
-    console.log('========================\n'.green)
+    console.log('========================\n'.green);
     console.log(`${1.} Crear una tarea`);
     console.log(`${2.} Listar tareas`);
     console.log(`${3.} Listar tareas copletadas`);
@@ -12,6 +14,15 @@ const mostrarMenu = () =>{
     console.log(`${5.}Completar tarea(s)`);
     console.log(`${6.} Borrar tarea`);
     console.log(`${0.} Salir\n`);
+
+    const readline = require('readline').createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+        readline.question('Seleccione una opcion: ', (alt)=>{
+            console.log({alt});
+            readline.close();
+        })
 }
 
 module.exports = {
